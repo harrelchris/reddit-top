@@ -1,1 +1,3 @@
-# reddit-top
+# Reddit Top
+
+Reddit top posts
