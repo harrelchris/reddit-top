@@ -2,7 +2,7 @@ name: Download latest data
 
 on:
   schedule:
-  - cron: "* * * * *"
+  - cron: "58 23 * * *"
 
 jobs:
   scheduled:
