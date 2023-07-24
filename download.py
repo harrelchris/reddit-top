@@ -27,12 +27,18 @@ posts = []
 attempts = 0
 
 while True:
+    request = urllib.request.Request("https://www.reddit.com/r/all/top.json?sort=top&t=day")
+    request.add_header("Accept", "application/json")
+    request.add_header("Accept-Language", "en-US,en;q=0.9")
+    request.add_header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+
     try:
-        response = urllib.request.urlopen("https://www.reddit.com/r/all/top.json?sort=top&t=day")
+        response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
+        sys.stderr.write(f"{e}\n")
         attempts += 1
-        if attempts > 3:
-            sys.stderr.write(f"Failed after 3 attempts: {e}\n")
+        if attempts > 2:
+            sys.stderr.write("Failed after 3 attempts\n")
             sys.exit(1)
         continue
     else:
