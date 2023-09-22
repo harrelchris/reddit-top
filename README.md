@@ -1,3 +1,3 @@
 # Reddit Top
 
-Daily top Reddit posts
+Reddit daily top posts
