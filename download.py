@@ -30,7 +30,7 @@ while True:
     request = urllib.request.Request("https://www.reddit.com/r/all/top.json?sort=top&t=day")
     request.add_header("Accept", "application/json")
     request.add_header("Accept-Language", "en-US,en;q=0.9")
-    request.add_header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+    request.add_header("User-Agent", "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36")
 
     try:
         response = urllib.request.urlopen(request)
