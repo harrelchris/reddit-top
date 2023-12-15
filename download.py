@@ -28,9 +28,22 @@ attempts = 0
 
 while True:
     request = urllib.request.Request("https://www.reddit.com/r/all/top.json?sort=top&t=day")
-    request.add_header("Accept", "application/json")
+    request.add_header("Accept", "image/avif,image/webp,*/*")
     request.add_header("Accept-Language", "en-US,en;q=0.9")
-    request.add_header("User-Agent", "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36")
+    request.add_header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+    request.add_header("Accept-Encoding", "gzip, deflate, br")
+    request.add_header("Cache-Control", "no-cache")
+    request.add_header("Dnt", "1")
+    request.add_header("Pragma", "no-cache")
+    request.add_header("Sec-Ch-Ua", '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"')
+    request.add_header("Sec-Ch-Ua-Mobile", "?0")
+    request.add_header("Sec-Ch-Ua-Platform", '"Windows"')
+    request.add_header("Sec-Fetch-Dest", "document")
+    request.add_header("Sec-Fetch-Mode", "navigate")
+    request.add_header("Sec-Fetch-Site", "none")
+    request.add_header("Sec-Fetch-User", "?1")
+    request.add_header("Sec-Gpc", "1")
+    request.add_header("Upgrade-Insecure-Requests", "1")
 
     try:
         response = urllib.request.urlopen(request)
